@@ -8,3 +8,146 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 38px 24px 22px;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px 22px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.gallery-item {
+  height: 185px;
+  overflow: hidden;
+}
+
+.gallery-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.gallery-link:hover .gallery-image,
+.gallery-link:focus-visible .gallery-image {
+  transform: scale(1.04);
+}
+
+/* Модальне вікно */
+.lightbox {
+  position: fixed;
+  width: min(90vw, 1100px);
+  max-width: none;
+  max-height: 90vh;
+  padding: 40px 16px 16px;
+  overflow: visible;
+  border: none;
+  border-radius: 4px;
+  background: #111;
+  color: #fff;
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 85%);
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 4px;
+  right: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 24px 16px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .gallery-item {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+}
+
+.modal-image {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
