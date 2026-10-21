@@ -2,6 +2,11 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
+// const lightbox = new window.SimpleLightbox(".gallery a", {
+//  captionsData: "alt",
+ // captionPosition: "bottom",
+ // captionDelay: 250, }); и удалить импорты для liveserver
+
 const images = [
   {
     preview:
